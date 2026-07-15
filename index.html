@@ -897,9 +897,10 @@
 
       <a
         class="sise-btn-primary"
-        href="https://aulad.educad.pe/courses/536/modules"
-        target="_top"
-        rel="noopener">
+        href="https://aulad.educad.pe/courses/536/pages/introduccion-2?module_item_id=5716"
+          target="_top"
+          rel="noopener"
+          data-top-navigation="true">
         Iniciar recorrido&nbsp; →
       </a>
 
@@ -1217,7 +1218,8 @@
           class="sise-module-btn"
           href="https://aulad.educad.pe/courses/536/pages/introduccion-2?module_item_id=5716"
           target="_top"
-          rel="noopener">
+          rel="noopener"
+          data-top-navigation="true">
           Iniciar módulo 1&nbsp; →
         </a>
 
@@ -1249,7 +1251,8 @@
           class="sise-module-btn"
           href="https://aulad.educad.pe/courses/536/pages/introduccion-3?module_item_id=5717"
           target="_top"
-          rel="noopener">
+          rel="noopener"
+          data-top-navigation="true">
           Iniciar módulo 2&nbsp; →
         </a>
 
@@ -1356,12 +1359,16 @@
           href="https://aulad.educad.pe/courses/536/pages/silabo-del-curso?module_item_id=5691"
           target="_top"
           rel="noopener"
+          data-top-navigation="true"
           data-api-endpoint="https://aulad.educad.pe/api/v1/courses/536/pages/silabo-del-curso"
           data-api-returntype="Page">
           Descargar sílabo&nbsp; ↓
         </a>
 
-        <span class="sise-download-btn sise-download-btn-alt" aria-disabled="true">
+        <span
+          class="sise-download-btn sise-download-btn-alt"
+          aria-disabled="true"
+          style="cursor:default;">
           Próximamente
         </span>
 
@@ -1432,8 +1439,24 @@
     });
 
   });
+  /* Navegación segura fuera del iframe */
+  component.addEventListener("click", function(event){
+
+    var link = event.target.closest('a[data-top-navigation="true"]');
+
+    if(!link){
+      return;
+    }
+
+    event.preventDefault();
+
+    try{
+      window.top.location.assign(link.href);
+    }catch(error){
+      window.open(link.href, "_top");
+    }
+
+  });
 
 })();
 </script>
-
-</div>
