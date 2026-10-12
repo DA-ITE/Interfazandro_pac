@@ -1,4 +1,5 @@
 <div id="sise-andragogia-home">
+
 <style>
 #sise-andragogia-home{
   --pink:#FF0050;
@@ -165,7 +166,6 @@
 
 /* =========================================================
    DATOS DEL CURSO
-   COMPACTO Y EN UNA SOLA LÍNEA EN CANVAS
 ========================================================= */
 
 #sise-andragogia-home .sise-stats-wrap{
@@ -743,65 +743,98 @@
 
 
 /* =========================================================
-   COEVALUACIÓN
+   COEVALUACIÓN PRÁCTICA OPCIONAL
 ========================================================= */
 
-#sise-andragogia-home .sise-coeval-card{
-  display:flex;
-  flex-direction:column;
+#sise-andragogia-home .sise-optional-card{
+  grid-column:1 / -1;
+  display:grid;
+  grid-template-columns:72px 1fr;
+  gap:18px;
+  align-items:start;
+  min-height:auto;
+  margin-top:10px;
+  padding:29px 31px;
+  border:1px solid #F3CBD7;
+  border-left:7px solid var(--pink);
+  border-top:1px solid #F3CBD7;
+  border-radius:16px;
+  background:linear-gradient(105deg,#FFF3F7 0%,#FFF9FB 54%,#FFFFFF 100%);
+  box-shadow:none;
 }
 
-#sise-andragogia-home .sise-coeval-intro{
-  margin-bottom:13px !important;
+#sise-andragogia-home .sise-optional-card .sise-evaluation-icon{
+  width:60px;
+  height:60px;
+  margin:0;
+  font-size:20px;
 }
 
-#sise-andragogia-home .sise-coeval-flow{
-  display:flex;
-  align-items:stretch;
-  gap:5px;
-  margin:5px 0 16px;
-}
-
-#sise-andragogia-home .sise-coeval-step{
-  flex:1;
+#sise-andragogia-home .sise-optional-content{
   min-width:0;
-  padding:9px 5px;
-  border:1px solid #F1D5DE;
-  border-radius:8px;
-  background:#FFF4F7;
-  text-align:center;
 }
 
-#sise-andragogia-home .sise-coeval-step strong{
-  display:block;
-  margin-bottom:3px;
-  color:var(--pink);
-  font-size:11px;
-  font-weight:900;
-}
-
-#sise-andragogia-home .sise-coeval-step span{
-  display:block;
-  color:#4D4548;
-  font-size:10px;
-  line-height:1.2;
-  font-weight:700;
-}
-
-#sise-andragogia-home .sise-coeval-arrow{
-  display:flex;
+#sise-andragogia-home .sise-optional-badge{
+  display:inline-flex;
   align-items:center;
   justify-content:center;
-  flex:0 0 12px;
+  margin:0 0 10px;
+  padding:6px 13px;
+  border:1px solid #F2CAD7;
+  border-radius:999px;
   color:var(--pink);
-  font-size:18px;
+  background:#FFFFFF;
+  font-size:12px;
+  line-height:1;
   font-weight:900;
+  letter-spacing:.7px;
+  text-transform:uppercase;
+}
+
+#sise-andragogia-home .sise-optional-card h3{
+  margin:0 0 11px;
+  color:#231F20;
+  font-size:21px;
+  line-height:1.25;
+}
+
+#sise-andragogia-home .sise-optional-card p{
+  max-width:1050px;
+  margin:0;
+  color:#665E61;
+  font-size:14px;
+  line-height:1.6;
+}
+
+#sise-andragogia-home .sise-optional-actions{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-top:17px;
+}
+
+#sise-andragogia-home .sise-optional-note{
+  display:inline-flex;
+  align-items:center;
+  min-height:43px;
+  padding:10px 14px;
+  border-radius:8px;
+  color:#FFFFFF;
+  background:#231F20;
+  font-size:13px;
+  line-height:1.2;
+  font-weight:800;
 }
 
 #sise-andragogia-home .sise-coeval-manual-btn{
-  width:100%;
-  margin-top:auto;
-  padding:11px 13px;
+  display:inline-flex;
+  width:auto;
+  min-height:43px;
+  align-items:center;
+  justify-content:center;
+  margin:0;
+  padding:10px 18px;
   border:0;
   border-radius:8px;
   color:#FFFFFF;
@@ -813,6 +846,7 @@
 }
 
 #sise-andragogia-home .sise-coeval-manual-btn:hover{
+  color:#FFFFFF;
   background:var(--pink);
   transform:translateY(-1px);
 }
@@ -1004,14 +1038,18 @@
   line-height:1.55;
 }
 
+
+/* =========================================================
+   PLANTILLAS
+========================================================= */
+
 #sise-andragogia-home .sise-template{
   display:none !important;
 }
 
 
 /* =========================================================
-   RESPONSIVE CANVAS / TABLET
-   SE MANTIENE EN UNA SOLA FILA
+   TABLET
 ========================================================= */
 
 @media screen and (max-width:900px){
@@ -1077,6 +1115,10 @@
 
   #sise-andragogia-home .sise-evaluation-card{
     min-height:auto;
+  }
+
+  #sise-andragogia-home .sise-optional-card{
+    grid-column:auto;
   }
 }
 
@@ -1196,14 +1238,26 @@
     margin:0 auto 20px;
   }
 
-  #sise-andragogia-home .sise-coeval-flow{
-    display:grid;
+  #sise-andragogia-home .sise-optional-card{
     grid-template-columns:1fr;
+    padding:24px 21px;
   }
 
-  #sise-andragogia-home .sise-coeval-arrow{
-    transform:rotate(90deg);
-    min-height:12px;
+  #sise-andragogia-home .sise-optional-card .sise-evaluation-icon{
+    width:52px;
+    height:52px;
+  }
+
+  #sise-andragogia-home .sise-optional-actions{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  #sise-andragogia-home .sise-optional-note,
+  #sise-andragogia-home .sise-coeval-manual-btn{
+    width:100%;
+    justify-content:center;
+    text-align:center;
   }
 
   #sise-andragogia-home .sise-coeval-modal{
@@ -1217,317 +1271,705 @@
   }
 }
 </style>
+
+
 <!-- =========================================================
      PORTADA
 ========================================================= -->
+
 <div class="sise-hero">
-<div class="sise-dot-pattern"></div>
-<div class="sise-container">
-<div class="sise-hero-content">
-<div class="sise-eyebrow">
-<span class="sise-eyebrow-dot"></span>
+
+  <div class="sise-dot-pattern"></div>
+
+  <div class="sise-container">
+
+    <div class="sise-hero-content">
+
+      <div class="sise-eyebrow">
+        <span class="sise-eyebrow-dot"></span>
         Programa de formación docente
       </div>
-<h1><span class="sise-highlight">Andragogía</span><br/> en modalidades a distancia</h1>
-<p class="sise-hero-description">Fortalece tu práctica docente aplicando principios andragógicos para diseñar experiencias de aprendizaje significativas, activas y orientadas a las necesidades del estudiante adulto.</p>
-<a class="sise-btn-primary" href="https://aulad.educad.pe/courses/536/pages/introduccion-2?module_item_id=5716">
-        Iniciar recorrido  →
+
+      <h1>
+        <span class="sise-highlight">Andragogía</span><br>
+        en modalidades a distancia
+      </h1>
+
+      <p class="sise-hero-description">
+        Fortalece tu práctica docente aplicando principios andragógicos para
+        diseñar experiencias de aprendizaje significativas, activas y orientadas
+        a las necesidades del estudiante adulto.
+      </p>
+
+      <a
+        class="sise-btn-primary"
+        href="https://aulad.educad.pe/courses/536/pages/introduccion-2?module_item_id=5716">
+        Iniciar recorrido&nbsp; →
       </a>
+
+    </div>
+
+  </div>
+
 </div>
-</div>
-</div>
+
+
 <!-- =========================================================
      DATOS DEL CURSO
 ========================================================= -->
+
 <div class="sise-stats-wrap">
-<table class="sise-stats">
-<tbody>
-<tr>
-<!-- MÓDULOS -->
-<td>
-<div class="sise-stat-icon">
-<svg aria-hidden="true" viewbox="0 0 24 24">
-<polygon points="12 2 22 7 12 12 2 7 12 2"></polygon>
-<polyline points="2 12 12 17 22 12"></polyline>
-<polyline points="2 17 12 22 22 17"></polyline>
-</svg>
-</div>
-<div class="sise-stat-value">Módulos</div>
-<p class="sise-stat-label">Aprendizaje con IA en Canvas</p>
-</td>
-<!-- NIVEL -->
-<td>
-<div class="sise-stat-icon">
+
+  <table class="sise-stats">
+
+    <tbody>
+
+      <tr>
+
+        <td>
+
+          <div class="sise-stat-icon">
+
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <polygon points="12 2 22 7 12 12 2 7 12 2"></polygon>
+              <polyline points="2 12 12 17 22 12"></polyline>
+              <polyline points="2 17 12 22 22 17"></polyline>
+            </svg>
+
+          </div>
+
+          <div class="sise-stat-value">
+            Módulos
+          </div>
+
+          <p class="sise-stat-label">
+            Aprendizaje con IA en Canvas
+          </p>
+
+        </td>
+
+
+        <td>
+
+          <div class="sise-stat-icon">
             ★
           </div>
-<div class="sise-stat-value">Intermedio</div>
-<p class="sise-stat-label">Nivel del curso</p>
-</td>
-<!-- DURACIÓN -->
-<td>
-<div class="sise-stat-icon">
-<svg aria-hidden="true" viewbox="0 0 24 24">
-<circle cx="12" cy="12" r="9"></circle>
-<path d="M12 7v5l3.5 2"></path>
-</svg>
-</div>
-<div class="sise-stat-value">4 horas</div>
-<p class="sise-stat-label">Duración del contenido</p>
-</td>
-<!-- PLAZO -->
-<td>
-<div class="sise-stat-icon">
-<svg aria-hidden="true" viewbox="0 0 24 24">
-<rect height="16" rx="2" width="18" x="3" y="5"></rect>
-<path d="M8 3v4"></path>
-<path d="M16 3v4"></path>
-<path d="M3 10h18"></path>
-<path d="M8 14h2"></path>
-<path d="M14 14h2"></path>
-<path d="M8 17h2"></path>
-<path d="M14 17h2"></path>
-</svg>
-</div>
-<div class="sise-stat-value">2 meses</div>
-<p class="sise-stat-label">Plazo para completarlo</p>
-</td>
-<!-- CERTIFICACIÓN -->
-<td>
-<div class="sise-stat-icon">
+
+          <div class="sise-stat-value">
+            Intermedio
+          </div>
+
+          <p class="sise-stat-label">
+            Nivel del curso
+          </p>
+
+        </td>
+
+
+        <td>
+
+          <div class="sise-stat-icon">
+
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="9"></circle>
+              <path d="M12 7v5l3.5 2"></path>
+            </svg>
+
+          </div>
+
+          <div class="sise-stat-value">
+            4 horas
+          </div>
+
+          <p class="sise-stat-label">
+            Duración del contenido
+          </p>
+
+        </td>
+
+
+        <td>
+
+          <div class="sise-stat-icon">
+
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <rect height="16" rx="2" width="18" x="3" y="5"></rect>
+              <path d="M8 3v4"></path>
+              <path d="M16 3v4"></path>
+              <path d="M3 10h18"></path>
+              <path d="M8 14h2"></path>
+              <path d="M14 14h2"></path>
+              <path d="M8 17h2"></path>
+              <path d="M14 17h2"></path>
+            </svg>
+
+          </div>
+
+          <div class="sise-stat-value">
+            2 meses
+          </div>
+
+          <p class="sise-stat-label">
+            Plazo para completarlo
+          </p>
+
+        </td>
+
+
+        <td>
+
+          <div class="sise-stat-icon">
             ✓
           </div>
-<div class="sise-stat-value">Certificación</div>
-<p class="sise-stat-label">Nota mínima aprobatoria: 17</p>
-</td>
-</tr>
-</tbody>
-</table>
+
+          <div class="sise-stat-value">
+            Certificación
+          </div>
+
+          <p class="sise-stat-label">
+            Nota mínima aprobatoria: 17
+          </p>
+
+        </td>
+
+      </tr>
+
+    </tbody>
+
+  </table>
+
 </div>
+
+
 <!-- =========================================================
      NAVEGACIÓN
 ========================================================= -->
-<div class="sise-container" id="sise-contenido-dinamico">
-<div class="sise-intro">
-<p>
-<strong>Instrucción:</strong>
+
+<div
+  class="sise-container"
+  id="sise-contenido-dinamico">
+
+
+  <div class="sise-intro">
+
+    <p>
+      <strong>Instrucción:</strong>
       selecciona uno de los botones para consultar la información.
       El contenido se mostrará en una única caja dinámica.
     </p>
-</div>
-<div aria-label="Secciones del curso" class="sise-navigation" role="tablist">
-<button aria-selected="true" class="sise-nav-button active" data-section="sobre-curso" role="tab" type="button">
-<span class="sise-nav-icon">i</span>
+
+  </div>
+
+
+  <div
+    aria-label="Secciones del curso"
+    class="sise-navigation"
+    role="tablist">
+
+
+    <button
+      aria-selected="true"
+      class="sise-nav-button active"
+      data-section="sobre-curso"
+      role="tab"
+      type="button">
+
+      <span class="sise-nav-icon">i</span>
       Sobre el curso
 
     </button>
-<button aria-selected="false" class="sise-nav-button" data-section="modulos" role="tab" type="button">
-<span class="sise-nav-icon">☰</span>
+
+
+    <button
+      aria-selected="false"
+      class="sise-nav-button"
+      data-section="modulos"
+      role="tab"
+      type="button">
+
+      <span class="sise-nav-icon">☰</span>
       Módulos
 
     </button>
-<button aria-selected="false" class="sise-nav-button" data-section="evaluacion" role="tab" type="button">
-<span class="sise-nav-icon">✓</span>
+
+
+    <button
+      aria-selected="false"
+      class="sise-nav-button"
+      data-section="evaluacion"
+      role="tab"
+      type="button">
+
+      <span class="sise-nav-icon">✓</span>
       Evaluación
 
     </button>
-</div>
-<!-- =====================================================
+
+  </div>
+
+
+  <!-- =====================================================
        CAJA DINÁMICA INICIAL
   ====================================================== -->
-<section aria-atomic="true" aria-live="polite" class="sise-dynamic-box">
-<div class="sise-dynamic-header">
-<span class="sise-dynamic-kicker" id="sise-dynamic-kicker">
+
+  <section
+    aria-atomic="true"
+    aria-live="polite"
+    class="sise-dynamic-box">
+
+
+    <div class="sise-dynamic-header">
+
+      <span
+        class="sise-dynamic-kicker"
+        id="sise-dynamic-kicker">
         Información general
       </span>
-<h2 class="sise-dynamic-title" id="sise-dynamic-title">
+
+      <h2
+        class="sise-dynamic-title"
+        id="sise-dynamic-title">
         Conoce el propósito del curso
       </h2>
-</div>
-<div class="sise-dynamic-body" id="sise-dynamic-body">
-<h3 class="sise-section-title">
-<span class="sise-title-number">01</span>
+
+    </div>
+
+
+    <div
+      class="sise-dynamic-body"
+      id="sise-dynamic-body">
+
+
+      <h3 class="sise-section-title">
+        <span class="sise-title-number">01</span>
         Descripción del curso
       </h3>
-<p>En este curso fortalecerás tus competencias pedagógicas aplicando los principios de la andragogía para crear experiencias de aprendizaje significativas, activas y pertinentes en modalidades a distancia.</p>
-<h3 class="sise-section-title">
-<span class="sise-title-number">02</span>
+
+      <p>
+        En este curso fortalecerás tus competencias pedagógicas aplicando
+        los principios de la andragogía para crear experiencias de aprendizaje
+        significativas, activas y pertinentes en modalidades a distancia.
+      </p>
+
+
+      <h3 class="sise-section-title">
+        <span class="sise-title-number">02</span>
         ¿A quiénes está dirigido?
       </h3>
-<div class="sise-audience-card">
-<p><strong>Docentes y administrativos SISE</strong></p>
-</div>
-<h3 class="sise-section-title">
-<span class="sise-title-number">03</span>
+
+      <div class="sise-audience-card">
+
+        <p>
+          <strong>Docentes y administrativos SISE</strong>
+        </p>
+
+      </div>
+
+
+      <h3 class="sise-section-title">
+        <span class="sise-title-number">03</span>
         Logro del curso
       </h3>
-<div class="sise-goal-card">
-<p>Diseñar experiencias de aprendizaje activas para estudiantes adultos integrando principios andragógicos, estrategias de engagement y herramientas digitales con propósito pedagógico en modalidades a distancia, promoviendo participación significativa, autonomía y compromiso sostenido mediante propuestas listas para su implementación profesional.</p>
-</div>
-<h3 class="sise-section-title">
-<span class="sise-title-number">04</span>
+
+      <div class="sise-goal-card">
+
+        <p>
+          Diseñar experiencias de aprendizaje activas para estudiantes adultos
+          integrando principios andragógicos, estrategias de engagement y
+          herramientas digitales con propósito pedagógico en modalidades a
+          distancia, promoviendo participación significativa, autonomía y
+          compromiso sostenido mediante propuestas listas para su implementación
+          profesional.
+        </p>
+
+      </div>
+
+
+      <h3 class="sise-section-title">
+        <span class="sise-title-number">04</span>
         Competencia a desarrollar
       </h3>
-<div class="sise-competence">
-<strong>C2 · Competencia pedagógica</strong>
-<p>Capacidad para diseñar, implementar y evaluar procesos de enseñanza-aprendizaje efectivos, considerando las necesidades individuales y grupales de los estudiantes mediante estrategias didácticas multimodales, experiencias auténticas, recursos pertinentes y metodologías alineadas con contextos reales de empleabilidad.</p>
-</div>
-</div>
-</section>
-<!-- =====================================================
+
+      <div class="sise-competence">
+
+        <strong>
+          C2 · Competencia pedagógica
+        </strong>
+
+        <p>
+          Capacidad para diseñar, implementar y evaluar procesos de
+          enseñanza-aprendizaje efectivos, considerando las necesidades
+          individuales y grupales de los estudiantes mediante estrategias
+          didácticas multimodales, experiencias auténticas, recursos pertinentes
+          y metodologías alineadas con contextos reales de empleabilidad.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
        SOBRE EL CURSO
   ====================================================== -->
-<div class="sise-template" data-kicker="Información general" data-title="Conoce el propósito del curso" id="sise-template-sobre-curso">
-<h3 class="sise-section-title">
-<span class="sise-title-number">01</span>
+
+  <div
+    class="sise-template"
+    data-kicker="Información general"
+    data-title="Conoce el propósito del curso"
+    id="sise-template-sobre-curso">
+
+
+    <h3 class="sise-section-title">
+      <span class="sise-title-number">01</span>
       Descripción del curso
     </h3>
-<p>En este curso fortalecerás tus competencias pedagógicas aplicando los principios de la andragogía para crear experiencias de aprendizaje significativas, activas y pertinentes en modalidades a distancia.</p>
-<h3 class="sise-section-title">
-<span class="sise-title-number">02</span>
-      ¿A quiénes está dirigido?
-    </h3>
-<div class="sise-audience-card">
-<p><strong>Docentes y administrativos SISE</strong></p>
-</div>
-<h3 class="sise-section-title">
-<span class="sise-title-number">03</span>
-      Logro del curso
-    </h3>
-<div class="sise-goal-card">
-<p>Diseñar experiencias de aprendizaje activas para estudiantes adultos integrando principios andragógicos, estrategias de engagement y herramientas digitales con propósito pedagógico en modalidades a distancia, promoviendo participación significativa, autonomía y compromiso sostenido mediante propuestas listas para su implementación profesional.</p>
-</div>
-<h3 class="sise-section-title">
-<span class="sise-title-number">04</span>
-      Competencia a desarrollar
-    </h3>
-<div class="sise-competence">
-<strong>C2 · Competencia pedagógica</strong>
-<p>Capacidad para diseñar, implementar y evaluar procesos de enseñanza-aprendizaje efectivos, considerando las necesidades individuales y grupales de los estudiantes mediante estrategias didácticas multimodales, experiencias auténticas, recursos pertinentes y metodologías alineadas con contextos reales de empleabilidad.</p>
-</div>
-</div>
-<!-- =====================================================
-       MÓDULOS
-  ====================================================== -->
-<div class="sise-template" data-kicker="Ruta de aprendizaje" data-title="Ingresa a tus módulos" id="sise-template-modulos">
-<p>Selecciona el módulo que deseas revisar y da clic en el botón correspondiente para iniciar tu recorrido de aprendizaje.</p>
-<div class="sise-modules-grid">
-<article class="sise-module-card">
-<div class="sise-module-top">
-<div class="sise-module-number">
-            1
-          </div>
-<div class="sise-module-label">
-            Módulo 1
-          </div>
-</div>
-<h3>Comprendiendo al estudiante adulto y su participación en entornos virtuales</h3>
-<p class="sise-module-help">Da clic para iniciar el módulo.</p>
-<a class="sise-module-btn" href="https://aulad.educad.pe/courses/536/pages/introduccion-2?module_item_id=5716">Iniciar módulo 1  →</a>
-</article>
-<article class="sise-module-card">
-<div class="sise-module-top">
-<div class="sise-module-number">
-            2
-          </div>
-<div class="sise-module-label">
-            Módulo 2
-          </div>
-</div>
-<h3>Diseño de experiencias activas en modalidades a distancia</h3>
-<p class="sise-module-help">Da clic para iniciar el módulo.</p>
-<a class="sise-module-btn" href="https://aulad.educad.pe/courses/536/pages/introduccion-3?module_item_id=5717">Iniciar módulo 2  →</a>
-</article>
-</div>
-<!-- SÍLABO -->
-<div class="sise-syllabus-card">
-<div class="sise-syllabus-info">
-<span class="sise-syllabus-label">
-          Documento del curso
-        </span>
-<h3>
-          Sílabo
-        </h3>
-<p>Revisa el sílabo para conocer la organización, los aprendizajes y los lineamientos generales del curso.</p>
-</div>
-<a class="sise-syllabus-btn" href="https://aulad.educad.pe/courses/536/pages/silabo-del-curso?module_item_id=5691">
-        Ver sílabo  →
-      </a>
-</div>
-</div>
-<!-- =====================================================
-       EVALUACIÓN
-  ====================================================== -->
-<div class="sise-template" data-kicker="Evidencias de aprendizaje" data-title="¿Cómo serás evaluado?" id="sise-template-evaluacion">
 
     <p>
-      La evaluación combina actividades aplicadas en los dos módulos,
-      participación activa en el entorno virtual y un proceso de
-      <strong>coevaluación entre pares</strong>.
+      En este curso fortalecerás tus competencias pedagógicas aplicando
+      los principios de la andragogía para crear experiencias de aprendizaje
+      significativas, activas y pertinentes en modalidades a distancia.
     </p>
 
-    <div class="sise-evaluation-grid">
 
-      <article class="sise-evaluation-card">
-        <div class="sise-evaluation-icon">01</div>
-        <h3>Actividades de módulos</h3>
-        <p>
-          Diagnóstico del perfil del estudiante adulto y diseño de experiencias
-          de aprendizaje activas vinculadas con situaciones reales de la práctica docente.
-        </p>
-      </article>
+    <h3 class="sise-section-title">
+      <span class="sise-title-number">02</span>
+      ¿A quiénes está dirigido?
+    </h3>
 
-      <article class="sise-evaluation-card">
-        <div class="sise-evaluation-icon">02</div>
-        <h3>Participación activa</h3>
-        <p>
-          Participación en foros, espacios de reflexión, actividades aplicadas
-          y procesos de retroalimentación durante el desarrollo del curso.
-        </p>
-      </article>
+    <div class="sise-audience-card">
 
-      <article class="sise-evaluation-card sise-coeval-card">
-        <div class="sise-evaluation-icon">03</div>
-        <h3>Coevaluación</h3>
-        <p class="sise-coeval-intro">
-          Revisa las evidencias de un compañero y realiza una valoración
-          utilizando la rúbrica de la actividad.
-        </p>
+      <p>
+        <strong>Docentes y administrativos SISE</strong>
+      </p>
 
-        <div class="sise-coeval-flow" aria-label="Flujo de coevaluación">
-          <div class="sise-coeval-step">
-            <strong>01</strong>
-            <span>Revisa<br>evidencias</span>
+    </div>
+
+
+    <h3 class="sise-section-title">
+      <span class="sise-title-number">03</span>
+      Logro del curso
+    </h3>
+
+    <div class="sise-goal-card">
+
+      <p>
+        Diseñar experiencias de aprendizaje activas para estudiantes adultos
+        integrando principios andragógicos, estrategias de engagement y
+        herramientas digitales con propósito pedagógico en modalidades a
+        distancia, promoviendo participación significativa, autonomía y
+        compromiso sostenido mediante propuestas listas para su implementación
+        profesional.
+      </p>
+
+    </div>
+
+
+    <h3 class="sise-section-title">
+      <span class="sise-title-number">04</span>
+      Competencia a desarrollar
+    </h3>
+
+    <div class="sise-competence">
+
+      <strong>
+        C2 · Competencia pedagógica
+      </strong>
+
+      <p>
+        Capacidad para diseñar, implementar y evaluar procesos de
+        enseñanza-aprendizaje efectivos, considerando las necesidades
+        individuales y grupales de los estudiantes mediante estrategias
+        didácticas multimodales, experiencias auténticas, recursos pertinentes
+        y metodologías alineadas con contextos reales de empleabilidad.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       MÓDULOS
+  ====================================================== -->
+
+  <div
+    class="sise-template"
+    data-kicker="Ruta de aprendizaje"
+    data-title="Ingresa a tus módulos"
+    id="sise-template-modulos">
+
+
+    <p>
+      Selecciona el módulo que deseas revisar y da clic en el botón
+      correspondiente para iniciar tu recorrido de aprendizaje.
+    </p>
+
+
+    <div class="sise-modules-grid">
+
+
+      <!-- MÓDULO 1 -->
+
+      <article class="sise-module-card">
+
+        <div class="sise-module-top">
+
+          <div class="sise-module-number">
+            1
           </div>
-          <div class="sise-coeval-arrow">›</div>
-          <div class="sise-coeval-step">
-            <strong>02</strong>
-            <span>Aplica<br>la rúbrica</span>
+
+          <div class="sise-module-label">
+            Módulo 1
           </div>
-          <div class="sise-coeval-arrow">›</div>
-          <div class="sise-coeval-step">
-            <strong>03</strong>
-            <span>Retroalimenta</span>
-          </div>
+
         </div>
 
-        <button type="button" class="sise-coeval-manual-btn sise-open-coeval">
-          Manual de coevaluación&nbsp; →
-        </button>
+        <h3>
+          Comprendiendo al estudiante adulto y su participación
+          en entornos virtuales
+        </h3>
+
+        <p class="sise-module-help">
+          Da clic para iniciar el módulo.
+        </p>
+
+        <a
+          class="sise-module-btn"
+          href="https://aulad.educad.pe/courses/536/pages/introduccion-2?module_item_id=5716">
+          Iniciar módulo 1&nbsp; →
+        </a>
+
+      </article>
+
+
+      <!-- MÓDULO 2 -->
+
+      <article class="sise-module-card">
+
+        <div class="sise-module-top">
+
+          <div class="sise-module-number">
+            2
+          </div>
+
+          <div class="sise-module-label">
+            Módulo 2
+          </div>
+
+        </div>
+
+        <h3>
+          Diseño de experiencias activas en modalidades a distancia
+        </h3>
+
+        <p class="sise-module-help">
+          Da clic para iniciar el módulo.
+        </p>
+
+        <a
+          class="sise-module-btn"
+          href="https://aulad.educad.pe/courses/536/pages/introduccion-3?module_item_id=5717">
+          Iniciar módulo 2&nbsp; →
+        </a>
+
       </article>
 
     </div>
 
+
+    <!-- SÍLABO -->
+
+    <div class="sise-syllabus-card">
+
+      <div class="sise-syllabus-info">
+
+        <span class="sise-syllabus-label">
+          Documento del curso
+        </span>
+
+        <h3>
+          Sílabo
+        </h3>
+
+        <p>
+          Revisa el sílabo para conocer la organización,
+          los aprendizajes y los lineamientos generales del curso.
+        </p>
+
+      </div>
+
+      <a
+        class="sise-syllabus-btn"
+        href="https://aulad.educad.pe/courses/536/pages/silabo-del-curso?module_item_id=5691">
+        Ver sílabo&nbsp; →
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       EVALUACIÓN ACTUALIZADA
+  ====================================================== -->
+
+  <div
+    class="sise-template"
+    data-kicker="Evidencias de aprendizaje"
+    data-title="¿Cómo serás evaluado?"
+    id="sise-template-evaluacion">
+
+
+    <p>
+      La evaluación del curso considera actividades por módulo para validar
+      conocimientos, con un peso de <strong>25% cada una</strong>; la participación
+      en el foro, con un peso total de <strong>10%</strong>; y una evaluación final
+      mediante <strong>Quizizz</strong>, con un peso de <strong>40%</strong>.
+    </p>
+
+
+    <div class="sise-evaluation-grid">
+
+
+      <!-- TARJETA 01 -->
+
+      <article class="sise-evaluation-card">
+
+        <div class="sise-evaluation-icon">
+          01
+        </div>
+
+        <h3>
+          Actividades por módulo
+        </h3>
+
+        <p>
+          En cada módulo desarrollarás una actividad orientada a
+          <strong>validar los conocimientos alcanzados</strong>.
+          Cada actividad representa el
+          <strong>25% de la nota final</strong>.
+        </p>
+
+      </article>
+
+
+      <!-- TARJETA 02 -->
+
+      <article class="sise-evaluation-card">
+
+        <div class="sise-evaluation-icon">
+          02
+        </div>
+
+        <h3>
+          Participación
+        </h3>
+
+        <p>
+          Se considerará tu participación en el
+          <strong>foro del curso</strong>, donde compartirás tus reflexiones
+          y aportes de acuerdo con las indicaciones planteadas.
+          Esta participación representa el
+          <strong>10% de la nota final</strong>.
+        </p>
+
+      </article>
+
+
+      <!-- TARJETA 03 -->
+
+      <article class="sise-evaluation-card">
+
+        <div class="sise-evaluation-icon">
+          03
+        </div>
+
+        <h3>
+          Evaluación final
+        </h3>
+
+        <p>
+          Al finalizar el curso realizarás una
+          <strong>evaluación mediante Quizizz</strong> para demostrar
+          los conocimientos desarrollados a lo largo de los módulos.
+          Esta evaluación representa el
+          <strong>40% de la nota final</strong>.
+        </p>
+
+      </article>
+
+
+      <!-- COEVALUACIÓN PRÁCTICA -->
+
+      <article class="sise-evaluation-card sise-optional-card">
+
+        <div class="sise-evaluation-icon">
+          +
+        </div>
+
+
+        <div class="sise-optional-content">
+
+          <span class="sise-optional-badge">
+            Opcional · Sin nota
+          </span>
+
+          <h3>
+            Coevaluación práctica
+          </h3>
+
+          <p>
+            Es una <strong>actividad integradora opcional</strong> que podrás
+            ir desarrollando progresivamente en cada módulo. Su propósito es
+            permitirte aplicar e integrar los aprendizajes del curso a medida
+            que avanzas en tu recorrido formativo.
+          </p>
+
+
+          <div class="sise-optional-actions">
+
+            <span class="sise-optional-note">
+              Actividad formativa · No tiene calificación
+            </span>
+
+
+            <button
+              type="button"
+              class="sise-coeval-manual-btn sise-open-coeval">
+              Manual de coevaluación&nbsp; →
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    </div>
+
+
     <div class="sise-pass-card">
-      <div class="sise-pass-number">17</div>
+
+      <div class="sise-pass-number">
+        17
+      </div>
+
       <p>
         Para aprobar el curso, el participante deberá presentar las
         evidencias solicitadas y alcanzar una
         <strong>nota mínima de 17</strong>.
       </p>
+
     </div>
 
   </div>
+
 </div>
+
+
 <!-- =========================================================
      MANUAL DE COEVALUACIÓN
 ========================================================= -->
@@ -1584,6 +2026,7 @@
           </div>
 
           <div>
+
             <h4>
               Lee la rúbrica
             </h4>
@@ -1592,6 +2035,7 @@
               Revisa los criterios, niveles de logro y descriptores antes
               de iniciar la valoración.
             </p>
+
           </div>
 
         </div>
@@ -1604,6 +2048,7 @@
           </div>
 
           <div>
+
             <h4>
               Revisa las evidencias
             </h4>
@@ -1612,6 +2057,7 @@
               Observa el trabajo presentado por tu compañero e identifica
               evidencias relacionadas con cada criterio.
             </p>
+
           </div>
 
         </div>
@@ -1624,6 +2070,7 @@
           </div>
 
           <div>
+
             <h4>
               Aplica la rúbrica
             </h4>
@@ -1632,6 +2079,7 @@
               Contrasta las evidencias con los descriptores y selecciona
               el nivel de logro correspondiente.
             </p>
+
           </div>
 
         </div>
@@ -1644,6 +2092,7 @@
           </div>
 
           <div>
+
             <h4>
               Brinda retroalimentación
             </h4>
@@ -1652,10 +2101,10 @@
               Explica brevemente qué observaste, reconoce fortalezas y señala
               una oportunidad concreta de mejora.
             </p>
+
           </div>
 
         </div>
-
 
       </div>
 
@@ -1668,12 +2117,9 @@
 
       </div>
 
-
     </div>
 
-
   </div>
-
 
 </div>
 
@@ -1681,6 +2127,7 @@
 <!-- =========================================================
      JAVASCRIPT
 ========================================================= -->
+
 <script>
 (function(){
 
@@ -1944,4 +2391,5 @@
 
 })();
 </script>
+
 </div>
